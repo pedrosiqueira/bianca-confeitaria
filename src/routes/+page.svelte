@@ -14,16 +14,16 @@
 		<hr/>
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
-				<a class="nav-link btn" aria-current="page" href="#">Active</a>
+				<a class="nav-link" href="#"><i class="bi bi-geo-alt-fill"></i> Rotas</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
+				<a class="nav-link" href="#"><i class="bi bi-share-fill"></i> Compartilhar</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
+				<a class="nav-link" href="#"><i class="bi bi-instagram"></i> Instagram</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+				<a class="nav-link" href="https://api.whatsapp.com/send/?phone=5567984228733&text&type=phone_number&app_absent=0"><i class="bi bi-whatsapp"></i> WhatsApp</a>
 			</li>
 		</ul>
 		<hr/>
@@ -159,7 +159,6 @@
 						default variables. It's also worth noting that just about any HTML can go within the
 						<code>.accordion-body</code>, though the transition does limit overflow.
 					</div>
-				</div>
 			</div>
 			<div class="accordion-item">
 				<h2 class="accordion-header">
