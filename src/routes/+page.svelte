@@ -1,13 +1,17 @@
+<div class="div-background">
+</div>
 <div class="container">
 	<main>
 		<div class=" text-center">
 			<img class="d-block mx-auto" src="/logo.webp" alt="" width="120" />
-			<h2>Confeitaria da Bia</h2>
+			<h3>Delicora</h3>
 			<p class="lead">
 				Brownieria, cafés gelados e quentes especiais, croissant´s doces e salgados.
 			</p>
 		</div>
-		<hr />
+		<h5><span class="badge text-bg-danger">Aberto</span></h5>
+		<button type="button" class="btn btn-outline-danger" disabled> Calcular entrega</button>
+		<hr/>
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
 				<a class="nav-link btn" aria-current="page" href="#">Active</a>
@@ -22,7 +26,7 @@
 				<a class="nav-link disabled" aria-disabled="true">Disabled</a>
 			</li>
 		</ul>
-		<hr />
+		<hr/>
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
 				<h2 class="accordion-header">
@@ -51,7 +55,7 @@
 									data-bs-toggle="modal"
 									data-bs-target="#exampleModal"
 								>
-									<div class="card mb-3" style="max-width: 540px;">
+									<div class="card mb-3" style="max-width: 560px;">
 										<div class="row g-0">
 											<div class="col-md-4">
 												<img src="/bom bom.webp" class="img-fluid rounded-start" alt="..." />
@@ -78,7 +82,7 @@
 									data-bs-toggle="modal"
 									data-bs-target="#exampleModal"
 								>
-									<div class="card mb-3" style="max-width: 540px;">
+									<div class="card mb-3" style="max-width: 560px;">
 										<div class="row g-0">
 											<div class="col-md-4">
 												<img src="/bom bom.webp" class="img-fluid rounded-start" alt="..." />
@@ -105,7 +109,7 @@
 									data-bs-toggle="modal"
 									data-bs-target="#exampleModal"
 								>
-									<div class="card mb-3" style="max-width: 540px;">
+									<div class="card mb-3" style="max-width: 560px;">
 										<div class="row g-0">
 											<div class="col-md-4">
 												<img src="/bom bom.webp" class="img-fluid rounded-start" alt="..." />
@@ -140,7 +144,7 @@
 						aria-expanded="false"
 						aria-controls="collapseTwo"
 					>
-						Accordion Item #2
+						Brownies
 					</button>
 				</h2>
 				<div
@@ -148,7 +152,6 @@
 					class="accordion-collapse collapse"
 					data-bs-parent="#accordionExample"
 				>
-					<div class="accordion-body">
 						<strong>This is the second item's accordion body.</strong> It is hidden by default,
 						until the collapse plugin adds the appropriate classes that we use to style each
 						element. These classes control the overall appearance, as well as the showing and hiding
@@ -164,11 +167,11 @@
 						class="accordion-button collapsed"
 						type="button"
 						data-bs-toggle="collapse"
-						data-bs-target="#collapseThree"
+						data-bs-target="#collapseTwo"
 						aria-expanded="false"
-						aria-controls="collapseThree"
+						aria-controls="collapseTwo"
 					>
-						Accordion Item #3
+						Brownies
 					</button>
 				</h2>
 				<div
@@ -215,3 +218,19 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.div-background {
+		height: 150px; 
+		background-color: pink;
+		border-bottom: 3px dashed #bf8454;
+	}
+
+	.btn {
+		padding: 5px;
+		position: relative;
+		bottom: 39px;
+		left: 80px;
+	}
+
+</style>
