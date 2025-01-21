@@ -1,5 +1,6 @@
 export const catálogo = [
     {
+        id: "bombons",
         categoria: "bom bons",
         produtos: [
             {
@@ -19,17 +20,18 @@ export const catálogo = [
                 descrição: "Bombom de chocolate branco recheado de brigadeiro tradicional - 17g. Mínimo de 25 unidades.",
                 preço: "R$3,65 Un",
                 imagem: "/bombom_brigadeirob.jpeg"
-                
+
             },
             {
                 título: "Bombom Brigadeiro",
                 descrição: "Bombom de chocolate ao leite recheado de brigadeiro tradicional - 15g. Mínimo de 25 unidades.",
                 preço: "R$3,65 Un",
                 imagem: "/bombom_brigadeiro.jpeg"
-                
+
             }]
     },
     {
+        id: "bolonopote",
         categoria: "bolos no pote",
         produtos: [
             {
@@ -42,7 +44,7 @@ export const catálogo = [
                 título: "Bolo no pote 4 leites brigadeiro",
                 descrição: "Bolo de chocolate, recheio de quatro leites e brigadeiro. Foto ilustrativa. Manter refrigerado. Pote com 210ml.",
                 preço: "R$14,90",
-                desconto: "R$1,50",
+                desconto: "R$13,40",
                 imagem: "/bolo_4leites_brigadeiro.jpeg"
             },
             {
@@ -53,6 +55,7 @@ export const catálogo = [
             }]
     },
     {
+        id: "tortas",
         categoria: "Tortas",
         produtos: [
             {
@@ -65,7 +68,7 @@ export const catálogo = [
                 título: "Torta Café Trufada",
                 descrição: "Bolo de chocolate, musse de chocolate e café, doce de leite. Foto ilustrativa. Manter refrigerado.",
                 preço: "R$72,90 Kg",
-                desconto: "R$2,00",
+                desconto: "R$70,00",
                 imagem: "/torta_cafe.jpeg"
             },
             {
@@ -82,6 +85,7 @@ export const catálogo = [
             }]
     },
     {
+        id: "copofelicidade",
         categoria: "Copo felicidade",
         produtos: [
             {
@@ -94,7 +98,7 @@ export const catálogo = [
                 título: "Morango 250 ml",
                 descrição: "Geleia artesanal de Morango, creme branco, Brownie, brigadeiro belga, 250m",
                 preço: "R$19,90",
-                desconto: "R$1,50",
+                desconto: "R$15,00",
                 imagem: "/copo_morango.jpeg"
             },
             {
