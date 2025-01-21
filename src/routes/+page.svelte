@@ -14,16 +14,16 @@
 		<hr/>
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
-				<a class="nav-link" href="#"><i class="bi bi-geo-alt-fill"></i> Rotas</a>
+				<a class="nav-link" href="https://www.google.com/maps/dir//-20.784016,-51.700529/@-20.7838359,-51.7828536,12z?entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="bi bi-geo-alt-fill"></i> Rotas</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#"><i class="bi bi-share-fill"></i> Compartilhar</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#"><i class="bi bi-instagram"></i> Instagram</a>
+				<a class="nav-link" href="https://www.instagram.com/biancatavarescordeiro/" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="https://api.whatsapp.com/send/?phone=5567984228733&text&type=phone_number&app_absent=0"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+				<a class="nav-link" href="https://api.whatsapp.com/send/?phone=556791918207&text&type=phone_number&app_absent=0" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a>
 			</li>
 		</ul>
 		<hr/>
