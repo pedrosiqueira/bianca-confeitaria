@@ -4,16 +4,16 @@ export const catálogo = [
         categoria: "bom bons",
         produtos: [
             {
-                título: "Surpresa de morango",
-                descrição: "Bombom com base de brownie, creme de 4 leites e morango fresco, coberto com chocolate blend. aprox. 100g",
-                preço: "R$15,00",
-                imagem: "/surpresa_morango.jpeg"
+                título: "Bombom Leite Condensado",
+                descrição: "Bombom de chocolate ao leite recheado de leite condensado - 17g. Mínimo de 25 unidades.",
+                preço: "R$3,06 Un",
+                imagem: "/bombom_leitecondensado.jpeg"
             },
             {
-                título: "Surpresa de uva",
-                descrição: "Bombom com base de brownie, creme de 4 leites e uva verde, coberto com chocolate blend. aprox. 100g",
-                preço: "R$15,00",
-                imagem: "/surpresa_uva.jpeg"
+                título: "Bombom Leite Condensado com Nozes",
+                descrição: "Bombom de chocolate ao leite recheado de leite condensado com nozes - 17g. Mínimo de 25 unidades.",
+                preço: " R$3,06 Un",
+                imagem: "/bombom_leitecnozes.jpeg"
             },
             {
                 título: "Bombom Brigadeiro Branco",

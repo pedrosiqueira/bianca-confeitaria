@@ -17,10 +17,8 @@
 		<hr />
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
-				<a
-					class="nav-link"
-					href="https://maps.app.goo.gl/qA9zdHWhDMrTh9Qv9"
-					target="_blank"><i class="bi bi-geo-alt-fill"></i> Rotas</a
+				<a class="nav-link" href="https://maps.app.goo.gl/qA9zdHWhDMrTh9Qv9" target="_blank"
+					><i class="bi bi-geo-alt-fill"></i> Rotas</a
 				>
 			</li>
 			<li class="nav-item">
@@ -52,11 +50,7 @@
 							>{item.categoria}
 						</button>
 					</h2>
-					<div
-						id={item.id}
-						class="accordion-collapse collapse"
-						data-bs-parent="#accordionExample"
-					>
+					<div id={item.id} class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
 							<div class="row row-cols-1 row-cols-md-2 g-4">
 								{#each item.produtos as produto}
@@ -78,13 +72,13 @@
 															<p class="card-text">
 																{produto.descrição}
 															</p>
-															<p class="card-text" style="color:blueviolet">
-																	{#if produto.desconto}
-																		{produto.desconto}
-																		<s>{produto.preço}</s>
-																	{:else}
-																		{produto.preço}
-																	{/if}
+															<p class="card-text" style="color:#bf8454">
+																{#if produto.desconto}
+																	{produto.desconto}
+																	<s>{produto.preço}</s>
+																{:else}
+																	{produto.preço}
+																{/if}
 															</p>
 														</div>
 													</div>
@@ -103,6 +97,7 @@
 </div>
 
 <!-- Modal -->
+
 <div
 	class="modal fade"
 	id="exampleModal"
@@ -113,16 +108,27 @@
 	<div class="modal-dialog modal-dialog-centered modal-xl">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<div class="mx-auto"><img src="/bom bom.webp" alt="" width="50%" /></div>
-				<div>Bom bom recheado sabor uva</div>
+				{#each catálogo as categoria}
+					{#each categoria.produtos as produto}
+						<div>
+							<div class="mx-auto">
+								<img src={produto.imagem} alt={produto.título} width="30%" />
+							</div>
+							<h5>{produto.título}</h5>
+							<div>{produto.descrição}</div>
+						</div>
+					{/each}
+				{/each}
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
+				<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+					<button type="button" class="btn btn-danger">+</button>
+					<button type="button" class="btn btn-outline-primary">1</button>
+					<button type="button" class="btn btn-danger">-</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -140,5 +146,12 @@
 		position: relative;
 		bottom: 39px;
 		left: 80px;
+	}
+
+	.btn-group {
+		padding: 5px;
+		position: relative;
+		bottom: 39px;
+		left: -300px;
 	}
 </style>
