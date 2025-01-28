@@ -1,5 +1,6 @@
 <script>
 	import { catálogo } from '$lib/produtos.js';
+	let p = $state({ imagem: '', título: 'test', descrição: 'descrição' });
 </script>
 
 <div class="div-background"></div>
@@ -60,6 +61,7 @@
 											href=""
 											data-bs-toggle="modal"
 											data-bs-target="#exampleModal"
+											onclick={() => (p = produto)}
 										>
 											<div class="card mb-3" style="max-width: 560px;">
 												<div class="row g-0">
@@ -73,7 +75,7 @@
 																{produto.descrição}
 															</p>
 															<p class="card-text" style="color:#bf8454">
-																{#if produto.desconto}
+																R$ {#if produto.desconto}
 																	{produto.desconto}
 																	<s>{produto.preço}</s>
 																{:else}
@@ -93,6 +95,7 @@
 				</div>
 			{/each}
 		</div>
+		<div class="sticky-bottom">Carrinho</div>
 	</main>
 </div>
 
@@ -111,24 +114,21 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				{#each catálogo as categoria}
-					{#each categoria.produtos as produto}
-						<div>
-							<div class="mx-auto">
-								<img src={produto.imagem} alt={produto.título} width="30%" />
-							</div>
-							<h5>{produto.título}</h5>
-							<div>{produto.descrição}</div>
-						</div>
-					{/each}
-				{/each}
+				<div>
+					<div class="mx-auto">
+						<img src={p.imagem} alt={p.título} width="30%" />
+					</div>
+					<h5>{p.título}</h5>
+					<div>{p.descrição}</div>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-					<button type="button" class="btn btn-danger">+</button>
-					<button type="button" class="btn btn-outline-primary">1</button>
-					<button type="button" class="btn btn-danger">-</button>
+					<button type="button" class="btn btn-danger" onclick={()=>{if (p.qtd > 0) p.qtd--;}}>-</button>
+					<button type="button" class="btn btn-outline-danger">{p.qtd}</button>
+					<button type="button" class="btn btn-danger" onclick={()=> (p.qtd++)}>+</button>
 				</div>
+				<button class="btn btn-danger">Adicionar R$ {p.qtd * p.preço}</button>
 			</div>
 		</div>
 	</div>
@@ -139,19 +139,5 @@
 		height: 150px;
 		background-color: pink;
 		border-bottom: 3px dashed #bf8454;
-	}
-
-	.btn {
-		padding: 5px;
-		position: relative;
-		bottom: 39px;
-		left: 80px;
-	}
-
-	.btn-group {
-		padding: 5px;
-		position: relative;
-		bottom: 39px;
-		left: -300px;
 	}
 </style>
