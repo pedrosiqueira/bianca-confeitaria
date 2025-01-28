@@ -9,33 +9,23 @@
 		<div class=" text-center">
 			<img class="d-block mx-auto" src="/logo.webp" alt="" width="120" />
 			<h3>Delicora</h3>
-			<p class="lead">
-				Brownieria, cafés gelados e quentes especiais, croissant´s doces e salgados.
-			</p>
+			<p class="lead">Brownieria, cafés gelados e quentes especiais, croissant´s doces e salgados.</p>
 		</div>
 		<h5><span class="badge text-bg-danger">Aberto</span></h5>
 		<button type="button" class="btn btn-outline-danger" disabled> Calcular entrega</button>
 		<hr />
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
-				<a class="nav-link" href="https://maps.app.goo.gl/qA9zdHWhDMrTh9Qv9" target="_blank"
-					><i class="bi bi-geo-alt-fill"></i> Rotas</a
-				>
+				<a class="nav-link" href="https://maps.app.goo.gl/qA9zdHWhDMrTh9Qv9" target="_blank"><i class="bi bi-geo-alt-fill"></i> Rotas</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#"><i class="bi bi-share-fill"></i> Compartilhar</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="https://www.instagram.com/biancatavarescordeiro/" target="_blank"
-					><i class="bi bi-instagram"></i> Instagram</a
-				>
+				<a class="nav-link" href="https://www.instagram.com/biancatavarescordeiro/" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
 			</li>
 			<li class="nav-item">
-				<a
-					class="nav-link"
-					href="https://api.whatsapp.com/send/?phone=556791918207&text&type=phone_number&app_absent=0"
-					target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a
-				>
+				<a class="nav-link" href="https://api.whatsapp.com/send/?phone=556791918207&text&type=phone_number&app_absent=0" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a>
 			</li>
 		</ul>
 		<hr />
@@ -43,26 +33,14 @@
 			{#each catálogo as item}
 				<div class="accordion-item">
 					<h2 class="accordion-header">
-						<button
-							class="accordion-button collapsed"
-							type="button"
-							data-bs-toggle="collapse"
-							data-bs-target="#{item.id}"
-							>{item.categoria}
-						</button>
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{item.id}">{item.categoria} </button>
 					</h2>
 					<div id={item.id} class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
 							<div class="row row-cols-1 row-cols-md-2 g-4">
 								{#each item.produtos as produto}
 									<div class="col">
-										<a
-											class="text-decoration-none"
-											href=""
-											data-bs-toggle="modal"
-											data-bs-target="#exampleModal"
-											onclick={() => (p = produto)}
-										>
+										<a class="text-decoration-none" href="" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick={() => (p = produto)}>
 											<div class="card mb-3" style="max-width: 560px;">
 												<div class="row g-0">
 													<div class="col-md-4">
@@ -95,19 +73,12 @@
 				</div>
 			{/each}
 		</div>
-		<div class="sticky-bottom">Carrinho</div>
+		<div class="position-fixed bottom-0 end-0">Carrinho</div>
 	</main>
 </div>
 
 <!-- Modal -->
-
-<div
-	class="modal fade"
-	id="exampleModal"
-	tabindex="-1"
-	aria-labelledby="exampleModalLabel"
-	aria-hidden="true"
->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-xl">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -124,9 +95,15 @@
 			</div>
 			<div class="modal-footer">
 				<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-					<button type="button" class="btn btn-danger" onclick={()=>{if (p.qtd > 0) p.qtd--;}}>-</button>
+					<button
+						type="button"
+						class="btn btn-danger"
+						onclick={() => {
+							if (p.qtd > 0) p.qtd--;
+						}}>-</button
+					>
 					<button type="button" class="btn btn-outline-danger">{p.qtd}</button>
-					<button type="button" class="btn btn-danger" onclick={()=> (p.qtd++)}>+</button>
+					<button type="button" class="btn btn-danger" onclick={() => p.qtd++}>+</button>
 				</div>
 				<button class="btn btn-danger">Adicionar R$ {p.qtd * p.preço}</button>
 			</div>
