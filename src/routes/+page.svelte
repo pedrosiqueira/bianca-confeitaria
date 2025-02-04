@@ -11,7 +11,7 @@
 			<h3>Delicora</h3>
 			<p class="lead">Brownieria, cafés gelados e quentes especiais, croissant´s doces e salgados.</p>
 		</div>
-		<h5><span class="badge text-bg-danger">Aberto</span></h5>
+		<span class="badge text-bg-danger">Aberto</span>
 		<button type="button" class="btn btn-outline-danger" disabled> Calcular entrega</button>
 		<hr />
 		<ul class="nav justify-content-center">
@@ -102,8 +102,8 @@
 							if (p.qtd > 0) p.qtd--;
 						}}>-</button
 					>
-					<button type="button" class="btn btn-outline-danger">{p.qtd}</button>
-					<button type="button" class="btn btn-danger" onclick={() => p.qtd++}>+</button>
+					<button class="btn btn-outline-danger">{p.qtd}</button>
+					<button class="btn btn-danger" onclick={() => p.qtd++}>+</button>
 				</div>
 				<button class="btn btn-danger">Adicionar R$ {p.qtd * p.preço}</button>
 			</div>
