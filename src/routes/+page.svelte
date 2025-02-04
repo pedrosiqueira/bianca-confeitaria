@@ -1,6 +1,7 @@
 <script>
 	import { catálogo } from '$lib/produtos.js';
 	let p = $state({ imagem: '', título: 'test', descrição: 'descrição' });
+	let carrinho = $state(new Set());
 </script>
 
 <div class="div-background"></div>
@@ -73,11 +74,12 @@
 				</div>
 			{/each}
 		</div>
-		<div class="position-fixed bottom-0 end-0">Carrinho</div>
+		<div class="position-fixed bottom-0 end-0"><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalcarrinho">Carrinho ({carrinho.size})</button></div>
+
 	</main>
 </div>
 
-<!-- Modal -->
+<!-- Modal produto -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-xl">
 		<div class="modal-content">
@@ -105,7 +107,30 @@
 					<button class="btn btn-outline-danger">{p.qtd}</button>
 					<button class="btn btn-danger" onclick={() => p.qtd++}>+</button>
 				</div>
-				<button class="btn btn-danger">Adicionar R$ {p.qtd * p.preço}</button>
+				<button onclick={() => carrinho.add(p)} data-bs-dismiss="modal" class="btn btn-danger">Adicionar R$ {p.qtd * p.preço}</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal carrinho  -->
+<div id="modalcarrinho" class="modal" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><i class="bi bi-cart3"></i> Carrinho</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<ul class="list-group list-group-flush">
+					{#each [...carrinho] as item}
+						<li class="list-group-item">{item}</li>
+					{/each}
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-cart3"></i> Continuar comprando</button>
+				<button type="button" class="btn btn-primary"><i class="bi bi-arrow-right"></i> Finalizar pedido</button>
 			</div>
 		</div>
 	</div>
