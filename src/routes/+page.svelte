@@ -1,7 +1,9 @@
 <script>
 	import { catálogo } from '$lib/produtos.js';
+	import { SvelteSet } from 'svelte/reactivity';
+
 	let p = $state({ imagem: '', título: 'test', descrição: 'descrição' });
-	let carrinho = $state(new Set());
+	let carrinho = $state(new SvelteSet());
 </script>
 
 <div class="div-background"></div>
@@ -74,8 +76,7 @@
 				</div>
 			{/each}
 		</div>
-		<div class="position-fixed bottom-0 end-0"><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalcarrinho">Carrinho ({carrinho.size})</button></div>
-
+		<div class="position-fixed bottom-0 end-0"><button class="btn btn-danger m-2" data-bs-toggle="modal" data-bs-target="#modalcarrinho">Carrinho ({carrinho.size})</button></div>
 	</main>
 </div>
 
@@ -123,14 +124,14 @@
 			</div>
 			<div class="modal-body">
 				<ul class="list-group list-group-flush">
-					{#each [...carrinho] as item}
-						<li class="list-group-item">{item}</li>
+					{#each carrinho as item}
+						<li class="list-group-item">{item.qtd} x {item.título}</li>
 					{/each}
 				</ul>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-cart3"></i> Continuar comprando</button>
-				<button type="button" class="btn btn-primary"><i class="bi bi-arrow-right"></i> Finalizar pedido</button>
+				<button type="button" class="btn btn-danger"><i class="bi bi-arrow-right"></i> Finalizar pedido</button>
 			</div>
 		</div>
 	</div>
