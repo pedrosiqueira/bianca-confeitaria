@@ -108,7 +108,18 @@
 					<button class="btn btn-outline-danger">{p.qtd}</button>
 					<button class="btn btn-danger" onclick={() => p.qtd++}>+</button>
 				</div>
-				<button onclick={() => carrinho.add(p)} data-bs-dismiss="modal" class="btn btn-danger">Adicionar R$ {p.qtd * p.preço}</button>
+				<!-- Botão carrinho -->
+				{#each catálogo as item}
+					{#each item.produtos as produto}
+						<button onclick={() => carrinho.add(p)} data-bs-dismiss="modal" class="btn btn-danger">
+							Adicionar R$ {#if produto.desconto}
+								{p.qtd * produto.desconto}
+							{:else}
+								{p.qtd * p.preço}
+							{/if}
+						</button>
+					{/each}
+				{/each}
 			</div>
 		</div>
 	</div>
