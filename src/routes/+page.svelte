@@ -108,18 +108,14 @@
 					<button class="btn btn-outline-danger">{p.qtd}</button>
 					<button class="btn btn-danger" onclick={() => p.qtd++}>+</button>
 				</div>
-				<!-- Botão carrinho -->
-				{#each catálogo as item}
-					{#each item.produtos as produto}
-						<button onclick={() => carrinho.add(p)} data-bs-dismiss="modal" class="btn btn-danger">
-							Adicionar R$ {#if produto.desconto}
-								{p.qtd * produto.desconto}
-							{:else}
-								{p.qtd * p.preço}
-							{/if}
-						</button>
-					{/each}
-				{/each}
+				<!-- Botão adicionar -->
+				<button onclick={() => carrinho.add({ ...p })} data-bs-dismiss="modal" class="btn btn-danger">
+					Adicionar R$ {#if p.desconto}
+						{(p.qtd * p.desconto).toFixed(2)}
+					{:else}
+						{(p.qtd * p.preço).toFixed(2)}
+					{/if}
+				</button>
 			</div>
 		</div>
 	</div>
@@ -139,6 +135,15 @@
 						<li class="list-group-item">{item.qtd} x {item.título}</li>
 					{/each}
 				</ul>
+				<hr />
+<div class="text-end fw-bold">
+	Total: R$
+	{Array.from(carrinho).reduce(
+		(acc, item) => acc + item.qtd * (item.desconto ?? item.preço),
+		0
+	).toFixed(2)}
+</div>
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-cart3"></i> Continuar comprando</button>
