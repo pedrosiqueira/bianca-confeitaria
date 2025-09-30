@@ -1,7 +1,6 @@
 <script>
 	import { catálogo } from '$lib/produtos.js';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { base } from '$app/paths';
 
 	let p = $state({ imagem: '', título: 'test', descrição: 'descrição' });
 	let carrinho = $state(new SvelteSet());
@@ -11,7 +10,7 @@
 <div class="container">
 	<main>
 		<div class=" text-center">
-			<img class="d-block mx-auto" src="{base}/logo.webp" alt="" width="120" />
+			<img class="d-block mx-auto" src="/imgs/logo.webp" alt="" width="120" />
 			<h3>Delicora</h3>
 			<p class="lead">Brownieria, cafés gelados e quentes especiais, croissant´s doces e salgados.</p>
 		</div>
@@ -137,12 +136,14 @@
 					{/each}
 				</ul>
 				<hr />
-				<div class="text-end fw-bold">
-					Total: R$
-					{Array.from(carrinho)
-						.reduce((acc, item) => acc + item.qtd * (item.desconto ?? item.preço), 0)
-						.toFixed(2)}
-				</div>
+<div class="text-end fw-bold">
+	Total: R$
+	{Array.from(carrinho).reduce(
+		(acc, item) => acc + item.qtd * (item.desconto ?? item.preço),
+		0
+	).toFixed(2)}
+</div>
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-cart3"></i> Continuar comprando</button>
